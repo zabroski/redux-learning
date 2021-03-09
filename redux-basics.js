@@ -29,6 +29,11 @@ const rooReducer = (state = initialState, action) => {
 const store = createStore(rooReducer);
 console.log(store.getState());
 
+//Subscription
+store.subscribe(() => {
+    console.log('[subscription]', store.getState());
+});
+
 
 //Dispatching Action 
 store.dispatch({type: 'INC_COUNTER'});
@@ -37,5 +42,3 @@ console.log(store.getState());
 
 
 
-
-//Subscription
